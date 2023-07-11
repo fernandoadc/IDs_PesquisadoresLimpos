@@ -1,12 +1,13 @@
 #WebCrawler para salvar os ids dos pesquisadores do Lattes: https://buscatextual.cnpq.br/buscatextual/busca.do#
 #Desenvolvido por Fernando Almeida
 #Data: 5/01/2023
-#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
+#new token github: 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
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as bs
@@ -16,10 +17,12 @@ import csv
 import os
 
 def OptionsDriver():
-    chrome_Options = Options()
-    chrome_Options.add_argument('--no-sandbox')
-    chrome_Options.add_argument('--disable-dev-shm-usage')
-    chrome_Wedriver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_Options)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
+    service = Service() 
+    chrome_Wedriver = webdriver.Chrome(service=service, options=options)
     return chrome_Wedriver
 
 class Info:
@@ -73,13 +76,17 @@ class Info:
             sleep(3)
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 60 - 1630
             sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 60 - 1630
             sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 1800
             sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 1900
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 1900
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 2100
             sleep(3)
             
             for i in range(2, 11):
@@ -144,7 +151,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids1D_page_6.csv') # 140
+        df.to_csv('nova_coleta/ids2_page_11.csv') # 
         #self.getInfosPubl
     '''def getInfosPublish(self):
         Bs = bs(self.driver.page_source, 'html.parser')
