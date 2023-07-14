@@ -120,6 +120,12 @@ class Info:
             sleep(3)
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 2100
             sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 2100
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 2100
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click() # page: 2100
+            sleep(3)
             
             for i in range(2, 12):
                 #p = 6
@@ -183,7 +189,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids2_page_27.csv') # 
+        df.to_csv('nova_coleta/ids2_page_30.csv') # 
         #self.getInfosPubl
     '''def getInfosPublish(self):
         Bs = bs(self.driver.page_source, 'html.parser')
