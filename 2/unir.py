@@ -1,7 +1,7 @@
 import csv
 import os
 
-diretorio = '/home/ufopa/Área de Trabalho/IDs_PesquisadoresLimpos/2/nova_coleta'
+diretorio = '/home/fernando/Área de Trabalho/PIBIC/IDs_PesquisadoresLimpos/2/nova_coleta'
 arquivo_saida = os.path.join(diretorio, "2_novo_uniao.csv")
 
 arquivos_csv = []
