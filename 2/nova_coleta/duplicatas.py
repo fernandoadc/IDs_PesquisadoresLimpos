@@ -20,7 +20,7 @@ def remover_registros_duplicados(arquivo_entrada, arquivo_saida):
     print(f"Registros duplicados removidos. Resultado salvo em '{arquivo_saida}'.")
 
 # Exemplo de uso
-arquivo_entrada = 'dados_sem_duplicatas_2.csv'
-arquivo_saida = 'dados_sem_duplicatas_2_NEW.csv'
+arquivo_entrada = 'dados_sem_duplicatas_2_NEW.csv'
+arquivo_saida = 'dados_sem_duplicatas_2_1.csv'
 
 remover_registros_duplicados(arquivo_entrada, arquivo_saida)
