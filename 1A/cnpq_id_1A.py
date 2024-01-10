@@ -4,6 +4,7 @@
 #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
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,10 +17,12 @@ import csv
 import os
 
 def OptionsDriver():
-    chrome_Options = Options()
+    chrome_Options = webdriver.ChromeOptions()
     chrome_Options.add_argument('--no-sandbox')
     chrome_Options.add_argument('--disable-dev-shm-usage')
-    chrome_Wedriver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_Options)
+    
+    service= Service('/home/ufopa/Downloads/chromedriver') #caso não execute só com Service(), precisa usar o Chromedriver local
+    chrome_Wedriver = webdriver.Chrome(service=service,options=chrome_Options)
     return chrome_Wedriver
 
 class Info:
@@ -45,27 +48,28 @@ class Info:
         for p in range(12, 13):
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p) +']').click()
             sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(3)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(2)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(2)
-            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            sleep(2)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(3)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(2)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(2)
+            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            #sleep(2)
             
+            #for i in range(2, 12):
             for i in range(2, 12):
                 #p = 6
                 self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(i) +']').click()
@@ -128,7 +132,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids1A_page_12.csv')
+        df.to_csv('nova_coleta/ids1A_page_2.csv')
         #self.getInfosPublish()
 
     '''def getInfosPublish(self):
