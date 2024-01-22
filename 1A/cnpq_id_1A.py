@@ -1,7 +1,7 @@
 #WebCrawler para salvar os ids dos pesquisadores do Lattes: https://buscatextual.cnpq.br/buscatextual/busca.do#
 #Desenvolvido por Fernando Almeida
 #Data: 5/01/2023
-#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
+#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
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -63,14 +63,16 @@ class Info:
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             sleep(3)
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(2)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(2)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(2)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(2)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(2)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             #sleep(2)
             
             #for i in range(2, 12):
-            for i in range(2, 12):
+            for i in range(2, 3):
                 #p = 6
                 self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(i) +']').click()
                 ####Ver isso aqui##### ir incrementando +1 para mudar de pagina
@@ -132,7 +134,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids1A_page_10.csv')
+        df.to_csv('nova_coleta/ids1A_page_13.csv')
         #self.getInfosPublish()
 
     '''def getInfosPublish(self):

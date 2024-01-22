@@ -44,20 +44,20 @@ class Info:
         sleep(10)
 
         ids = []
-    
+
         for p in range(12, 13):
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p) +']').click()
             sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
             #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             #sleep(3)
             #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
@@ -131,7 +131,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids1B_page_2.csv')
+        df.to_csv('nova_coleta/ids1B_page_7.csv')
         #self.getInfosPublish()
 
     '''def getInfosPublish(self):
