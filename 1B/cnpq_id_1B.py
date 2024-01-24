@@ -1,7 +1,7 @@
 #WebCrawler para salvar os ids dos pesquisadores do Lattes: https://buscatextual.cnpq.br/buscatextual/busca.do#
 #Desenvolvido por Fernando Almeida
 #Data: 5/01/2023
-#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
+#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
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 #from webdriver_manager.chrome import ChromeDriverManager
@@ -58,14 +58,14 @@ class Info:
             sleep(3)
             self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
-            #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
-            #sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
+            self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
+            sleep(3)
             #self.driver.find_element('xpath', '/html/body/form/div/div[4]/div/div/div/div[3]/div/div[2]/a['+ str(p + 1) +']').click()
             #sleep(3)
             
@@ -131,7 +131,7 @@ class Info:
         df = pd.DataFrame(ids)
 
         # Escrever o dataframe em um arquivo CSV
-        df.to_csv('nova_coleta/ids1B_page_7.csv')
+        df.to_csv('nova_coleta/ids1B_page_11.csv')
         #self.getInfosPublish()
 
     '''def getInfosPublish(self):
