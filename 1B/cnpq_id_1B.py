@@ -21,7 +21,7 @@ def OptionsDriver():
     chrome_Options.add_argument('--no-sandbox')
     chrome_Options.add_argument('--disable-dev-shm-usage')
     
-    service= Service('/home/fernandinho/Downloads/chromedriver') #caso não execute só com Service(), precisa usar o Chromedriver local
+    service= Service('/home/fernando/Downloads/chromedriver') #caso não execute só com Service(), precisa usar o Chromedriver local
     chrome_Wedriver = webdriver.Chrome(service=service,options=chrome_Options)
     return chrome_Wedriver
 
