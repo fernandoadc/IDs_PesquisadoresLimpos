@@ -21,6 +21,6 @@ def remover_registros_duplicados(arquivo_entrada, arquivo_saida):
 
 # Exemplo de uso
 arquivo_entrada = '1B.csv'
-arquivo_saida = 'dados_sem_duplicatas.csv'
+arquivo_saida = 'dados_sem_duplicatas_1B_novo.csv'
 
 remover_registros_duplicados(arquivo_entrada, arquivo_saida)
